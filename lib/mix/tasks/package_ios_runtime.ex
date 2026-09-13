@@ -1,4 +1,23 @@
 defmodule Mix.Tasks.Package.Ios.Runtime do
+  @shortdoc "Packages the iOS runtime with optional NIFs"
+  @moduledoc """
+  #{@shortdoc}
+
+  This task allows you to package the iOS runtime with optional NIFs.
+  You can specify the architectures and additional NIFs to include.
+
+  Usage:
+    mix package.ios.runtime [env <arch>]
+    mix package.ios.runtime with_diode_nifs
+    mix package.ios.runtime [<nif_git_urls>]
+
+  Default NIFS:
+    - https://github.com/elixir-desktop/exqlite
+
+  Diode NIFs:
+    - https://github.com/diodechain/esqlite.git
+    - https://github.com/diodechain/libsecp256k1.git
+  """
   import Runtimes.Ios
   import Runtimes
   alias Mix.Tasks.Package.Ios.Nif

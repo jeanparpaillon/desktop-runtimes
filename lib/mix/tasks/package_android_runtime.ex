@@ -1,4 +1,24 @@
 defmodule Mix.Tasks.Package.Android.Runtime do
+  @shortdoc "Packages the Android runtime with optional NIFs"
+  @moduledoc """
+  #{@shortdoc}
+
+  This task allows you to package the Android runtime with optional NIFs.
+  You can specify the architectures and additional NIFs to include.
+
+  Usage:
+    mix package.android.runtime [env <arch>]
+    mix package.android.runtime with_diode_nifs
+    mix package.android.runtime [<nif_git_urls>]
+
+  Default NIFS:
+    - https://github.com/elixir-desktop/exqlite
+
+  Diode NIFs:
+    - https://github.com/diodechain/esqlite.git
+    - https://github.com/diodechain/libsecp256k1.git
+  """
+
   import Runtimes.Android
   import Runtimes
   alias Mix.Tasks.Package.Android.Nif, as: Nif

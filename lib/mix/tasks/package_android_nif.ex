@@ -1,4 +1,13 @@
 defmodule Mix.Tasks.Package.Android.Nif do
+  @shortdoc "Packages an Android NIF"
+  @moduledoc """
+  #{@shortdoc}
+
+  This task allows you to package an Android NIF for different architectures.
+
+  Usage:
+    mix package.android.nif [<nif_git_url>]
+  """
   import Runtimes.Android
   import Runtimes
   use Mix.Task
