@@ -1,4 +1,13 @@
 defmodule Mix.Tasks.Package.Ios.Nif do
+  @shortdoc "Packages an iOS NIF"
+  @moduledoc """
+  #{@shortdoc}
+
+  This task allows you to package an iOS NIF for different architectures.
+
+  Usage:
+    mix package.ios.nif [<nif_git_url>]
+  """
   import Runtimes.Ios
   import Runtimes
   use Mix.Task
