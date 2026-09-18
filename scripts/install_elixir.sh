@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=1.16.3
+VERSION=1.20.2
 set -e
 
 mkdir $1
