@@ -22,7 +22,6 @@ defmodule Mix.Tasks.Package.Ios.Runtime do
   import Runtimes
   alias Mix.Tasks.Package.Ios.Nif
   use Mix.Task
-  require EEx
 
   def run(["with_diode_nifs"]) do
     nifs = [

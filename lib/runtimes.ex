@@ -1,5 +1,5 @@
 defmodule Runtimes do
-  require EEx
+  @moduledoc false
 
   def cmd(args, env \\ []) do
     args = if is_list(args), do: Enum.join(args, " "), else: args

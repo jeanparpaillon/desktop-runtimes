@@ -11,7 +11,6 @@ defmodule Mix.Tasks.Package.Ios.Nif do
   import Runtimes.Ios
   import Runtimes
   use Mix.Task
-  require EEx
 
   def run([nif]) do
     buildall(Map.keys(architectures()), nif)

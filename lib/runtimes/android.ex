@@ -1,5 +1,5 @@
 defmodule Runtimes.Android do
-  require EEx
+  @moduledoc false
   import Runtimes
   @android_abi_version 26
 

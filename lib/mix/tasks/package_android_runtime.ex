@@ -23,7 +23,6 @@ defmodule Mix.Tasks.Package.Android.Runtime do
   import Runtimes
   alias Mix.Tasks.Package.Android.Nif, as: Nif
   use Mix.Task
-  require EEx
 
   def run(["env" | arch]) do
     archs = Map.keys(architectures())

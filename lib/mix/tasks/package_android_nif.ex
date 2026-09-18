@@ -11,7 +11,6 @@ defmodule Mix.Tasks.Package.Android.Nif do
   import Runtimes.Android
   import Runtimes
   use Mix.Task
-  require EEx
 
   def run([nif]) do
     buildall(Map.keys(architectures()), nif)
