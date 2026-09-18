@@ -101,6 +101,8 @@ defmodule Runtimes.Android do
       env,
       %{
         ANDROID_NDK_HOME: ndk_home(),
+        # OpenSSL 3.x 15-android.conf reads ANDROID_NDK_ROOT, not ANDROID_NDK_HOME
+        ANDROID_NDK_ROOT: ndk_home(),
         PATH: bin_path() <> ":" <> path,
         NDK_ABI_PLAT: ndk_abi_plat,
         CXX: toolpath("clang++", arch),

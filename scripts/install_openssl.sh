@@ -1,6 +1,6 @@
 #!/bin/bash
-export VSN=1.1.1v
-export VSN_HASH=d6697e2871e77238460402e9362d47d18382b15ef9f246aba6c7bd780d38a6b0
+export VSN=3.6.4
+export VSN_HASH=9bffaa1ad1e07b354c21bd3324ec02fa15579f45a7d0494b3e74bc449b7333ef
 
 if [ -z "$OPENSSL_PREFIX" ]; then
 export PREFIX=/usr/local/openssl
@@ -24,8 +24,7 @@ mkdir -p $PREFIX/ssl && \
     wget -nc https://www.openssl.org/source/openssl-$VSN.tar.gz && \
     [ "$VSN_HASH" = "$(sha256sum openssl-$VSN.tar.gz | cut -d ' ' -f1)" ] && \
     tar xzf openssl-$VSN.tar.gz && \
-    cp $BASE_DIR/patch/openssl-ios.conf openssl-$VSN/Configurations/15-ios.conf && \
     cd openssl-$VSN && \
-    ./Configure $ARCH --prefix=$PREFIX "$@" && \
+    ./Configure $ARCH --prefix=$PREFIX no-shared "$@" && \
     make clean && make depend && make && make install_sw install_ssldirs
 

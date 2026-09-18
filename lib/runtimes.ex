@@ -24,19 +24,6 @@ defmodule Runtimes do
     ret
   end
 
-  def docker_build(image, file) do
-    IO.puts("RUN: docker build -t #{image} -f #{file} .")
-
-    ret =
-      System.cmd("docker", ~w(build -t #{image} -f #{file} .),
-        stderr_to_stdout: true,
-        into: IO.binstream(:stdio, :line)
-      )
-
-    File.rm(file)
-    {_, 0} = ret
-  end
-
   def default_nifs() do
     [
       "https://github.com/diodechain/esqlite.git",
