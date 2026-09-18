@@ -113,6 +113,7 @@ defmodule Mix.Tasks.Package.Android.Runtime do
           --with-ssl=#{openssl_target(arch)}
           --disable-dynamic-ssl-lib
           --enable-builtin-zlib
+          --disable-year2038
           --without-javac --without-odbc --without-wx --without-debugger --without-observer --without-cdv --without-et
           --xcomp-conf=xcomp/erl-xcomp-#{arch.xcomp}.conf
           --enable-static-nifs=#{Enum.join(nifs, ",")}
@@ -149,6 +150,7 @@ defmodule Mix.Tasks.Package.Android.Runtime do
           --with-ssl=#{openssl_target(arch)}
           --disable-dynamic-ssl-lib
           --enable-builtin-zlib
+          --disable-year2038
           --without-javac --without-odbc --without-wx --without-debugger --without-observer --without-cdv --without-et
           --xcomp-conf=xcomp/erl-xcomp-#{arch.xcomp}.conf
           --enable-static-nifs=#{Enum.join(nifs, ",")}
