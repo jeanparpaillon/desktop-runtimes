@@ -89,11 +89,6 @@ defmodule Mix.Tasks.Package.Android.Runtime do
       if !File.exists?(otp_target(arch)) do
         Runtimes.ensure_otp()
         cmd(~w(git clone _build/otp #{otp_target(arch)}))
-
-        if !File.exists?(Path.join(otp_target(arch), "patched")) do
-          cmd("cd #{otp_target(arch)} && git apply ../../../patch/otp-space.patch")
-          File.write!(Path.join(otp_target(arch), "patched"), "true")
-        end
       end
 
       env =
